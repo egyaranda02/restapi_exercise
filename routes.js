@@ -18,4 +18,6 @@ module.exports = function(app){
         .put(jsonku.ubahDataMhs);
     app.route('/hapus')
         .delete(jsonku.hapusDataMhs);
+    app.route('/krs')
+        .get(jsonku.tampilGroup);
 }
