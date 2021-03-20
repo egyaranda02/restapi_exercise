@@ -16,8 +16,9 @@ exports.registrasi = function(req, res){
         tanggal_daftar: new Date()
     }
 
-    var query = "SELECT email FROM ?? WHERE ??";
-    var table = ["user", "email", post.email];
+    var query = "SELECT email FROM ?? WHERE ?? = ? OR ?? = ?";
+    var table = ["user", "email", post.email, "username", post.username];
+
 
     query = mysql.format(query,table);
 
@@ -37,7 +38,7 @@ exports.registrasi = function(req, res){
                     }
                 });
             }else{
-                response.ok("Email sudah terdaftar, gunakan email lain!", res);
+                response.ok("Email/Username sudah terdaftar, gunakan email/username lain!", res);
             }
         }
     })
