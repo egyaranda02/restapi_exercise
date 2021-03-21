@@ -96,3 +96,8 @@ exports.login = function(req, res){
 
     })
 }
+
+// test verifikasi
+exports.halamanPercobaan = function(req, res){
+    response.ok("Halaman hanya untuk role 2!", res);
+}
